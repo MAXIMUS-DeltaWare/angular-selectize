@@ -17,7 +17,11 @@ angular.module('selectize', []).value('selectizeConfig', {}).directive("selectiz
       scope.config = scope.config || {};
 
       var isEmpty = function(val) {
-        return val === undefined || val === null || !val.length; //support checking empty arrays
+        if(Array.isArray(val)) {
+          return (val.length > 0) ? false : true;
+        }
+        //call to real Angular function
+        return modelCtrl.$isEmpty(val); 
       };
 
       var toggle = function(disabled) {
