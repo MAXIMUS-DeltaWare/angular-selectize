@@ -101,3 +101,10 @@ MyApp.value('selectizeConfig', {
   delimiter: '|'
 });
 ```
+
+##Note
+The original library had bug dealing with numeric values properly which was causing validation errors to show up. There are pull requests pending in original library for over 2 years to fix this issue but looks like maintainer is not responding.
+We can go back to original library whenever this issue get resolved.
+
+This is the issue:
+https://github.com/machineboy2045/angular-selectize/issues/116
